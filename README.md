@@ -44,15 +44,11 @@ rm -rf .git
 
 #### Set environment variables:
 
-- set environment variables for each application by using the env.sample.txt as a guide
+- set environment variables for the application by using the env.sample.txt as a guide
 
 ## Running the application
 
-The command below starts the two applications listening on port 8000 and 9000
-
-```bash
-yarn build
-```
+The command below starts the application
 
 ```bash
 yarn start
