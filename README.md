@@ -52,3 +52,9 @@ yarn build
 ```bash
 yarn start
 ```
+
+
+## schema design
+<p align="center">
+  <a target="blank"><img src="https://ibb.co/P9F9qhx" width="320" alt="Nest Logo" /></a>
+</p>
