@@ -3,7 +3,7 @@
 Description:
  - This app shows a simple shopping cart implementation
 
-#### Install dependencies:
+#### Approach:
  - A cart is uniquely identifiable so that it can be abandoned and retrieved by its ID
  - A cart can contain many items/products
  - An item should contain basic information(price, name, and quantity)
