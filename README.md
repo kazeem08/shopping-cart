@@ -17,6 +17,9 @@ Description:
 - Mongoose ([Mongoose](http://mongoosejs.com/))
 - Load environment variables from .env
 
+## postman-collection
+- [collection] (https://www.getpostman.com/collections/c68aa6c9f1e30b559640)
+
 ## Getting Started
 
 #### Clone the repo and make it yours:
