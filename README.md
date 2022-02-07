@@ -16,6 +16,7 @@ Description:
 - Uses [yarn](https://yarnpkg.com/)
 - Mongoose ([Mongoose](http://mongoosejs.com/))
 - Load environment variables from .env
+- [Yarn] (https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
 
 ## postman-collection
 - [collection] (https://www.getpostman.com/collections/c68aa6c9f1e30b559640)
