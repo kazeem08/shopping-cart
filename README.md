@@ -27,14 +27,9 @@ rm -rf .git
 ```
 
 #### Install dependencies:
-
-#give permission to execute file 
+ 
 ```bash
-chmod u+x dependencies.sh
-```
-
-```bash
-./dependencies.sh
+ yarn
 ```
 
 #### Set environment variables:
