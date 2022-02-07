@@ -80,7 +80,10 @@ router.delete('/:cartId/:productId', async (req: Request, res: Response) => {
     // Fetch data
     try {
         await cartService.removeFromCart({ cartId, productId });
-        return res.status(OK).end();
+        return res.status(OK).json({
+            message: 'item deleted',
+            error: false
+        });
     } catch (e){
         logger.err(e.message)
         return res.status(BAD_REQUEST).json({

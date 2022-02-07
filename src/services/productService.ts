@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-import { ProductType } from '../types/product';
+import { CreateProductType, ProductType } from '../types/product';
 import { ProductModel } from '../models/product';
 
 
@@ -10,6 +11,14 @@ import { ProductModel } from '../models/product';
  */
 async function getAll(): Promise<ProductType[]> {
     return ProductModel.find();
+}
+
+async function addProduct(data: CreateProductType): Promise<ProductType> {
+    const newProduct = new ProductModel(data);
+    const product = await newProduct.save();
+
+    return product;
+
 }
 
 
@@ -33,4 +42,5 @@ async function getOne(_id : string): Promise<ProductType> {
 export default {
     getAll,
     getOne,
+    addProduct,
 };

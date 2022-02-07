@@ -16,7 +16,6 @@ Description:
 - Uses [yarn](https://yarnpkg.com/)
 - Mongoose ([Mongoose](http://mongoosejs.com/))
 - Load environment variables from .env
-- Sample product file is in product.json, you can insert it into your database or you create your own products
 
 ## Getting Started
 

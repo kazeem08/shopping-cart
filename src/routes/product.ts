@@ -5,11 +5,12 @@ import logger from 'jet-logger';
 
 
 import productService from '../services/productService'
+import { CreateProductType } from 'src/types/product';
 
 
 // Constants
 const router = Router();
-const { OK, NOT_FOUND, BAD_REQUEST } = StatusCodes;
+const { OK, NOT_FOUND, BAD_REQUEST, CREATED } = StatusCodes;
 
 
 /**
@@ -31,6 +32,28 @@ router.get('/', async (_: Request, res: Response) => {
         });
     }
 
+});
+
+
+router.post('/', async (req: Request, res: Response) => {
+    const data: CreateProductType = req.body;
+
+    // Fetch data
+    try {
+        const product = await productService.addProduct(data);
+        return res.status(CREATED).json({
+            message: 'product added successfully',
+            data: product,
+            error: false,
+        });
+
+    } catch (e) {
+        logger.err(e.message)
+        return res.status(BAD_REQUEST).json({
+            error: true,
+            message: e.message,
+        });
+    }
 });
 
 /**
