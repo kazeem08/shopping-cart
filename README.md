@@ -51,5 +51,5 @@ yarn start
 
 ## schema design
 <p align="center">
-  <a target="blank"><img src="https://ibb.co/P9F9qhx" width="320" alt="Nest Logo" /></a>
+  <a href="https://ibb.co/P9F9qhx"><img src="https://i.ibb.co/F0m0Rw6/Screenshot-2022-02-07-at-09-44-17.png" alt="Screenshot-2022-02-07-at-09-44-17" border="0"></a><br /><a target='_blank' href='https://500pxdownload.com/'>instagram photo hd</a><br />
 </p>
