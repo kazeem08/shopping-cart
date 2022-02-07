@@ -13,9 +13,12 @@ Description:
 ## Features and Requirements
 
 - [Node](https://nodejs.org/en/download/current/)
-- Uses [yarn](https://yarnpkg.com/)
 - Mongoose ([Mongoose](http://mongoosejs.com/))
 - Load environment variables from .env
+- [Yarn] (https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
+
+## postman-collection
+- [collection] (https://www.getpostman.com/collections/c68aa6c9f1e30b559640)
 
 ## Getting Started
 
@@ -41,15 +44,11 @@ rm -rf .git
 
 #### Set environment variables:
 
-- set environment variables for each application by using the env.sample.txt as a guide
+- set environment variables for the application by using the env.sample.txt as a guide
 
 ## Running the application
 
-The command below starts the two applications listening on port 8000 and 9000
-
-```bash
-yarn build
-```
+The command below starts the application
 
 ```bash
 yarn start
