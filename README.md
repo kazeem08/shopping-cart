@@ -1,24 +1,14 @@
-## Description
+# Shopping-cart-app
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-
-# Topic-subscription servers
-
-This consist of two servers:
-- publisher-app handles SUBSCRIBE and PUBLISH (running on port 8000)
-- subscriber-app receives broadacst from the topic-subscribe app (running on port 9000)
+Description:
+ - This app shows a simple shopping cart implementation
  
-## Features
-
-- Uses [npm](https://www.npmjs.com/)
-- Nest + MongoDB ([Mongoose](http://mongoosejs.com/))
-- Load environment variables from .env
-
-## Requirements
+## Features and Requirements
 
 - [Node](https://nodejs.org/en/download/current/)
-- [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- Uses [yarn](https://yarnpkg.com/)
+- Mongoose ([Mongoose](http://mongoosejs.com/))
+- Load environment variables from .env
 
 ## Getting Started
 
@@ -37,14 +27,9 @@ rm -rf .git
 ```
 
 #### Install dependencies:
-
-#give permission to execute file 
+ 
 ```bash
-chmod u+x dependencies.sh
-```
-
-```bash
-./dependencies.sh
+ yarn
 ```
 
 #### Set environment variables:
@@ -56,16 +41,15 @@ chmod u+x dependencies.sh
 The command below starts the two applications listening on port 8000 and 9000
 
 ```bash
-chmod u+x dependencies.sh
+yarn build
 ```
 
 ```bash
-./start-server.sh
+yarn start
 ```
 
-## Test
 
-```bash
-#cd into individual app and run the command below 
-npm run test
-```
+## schema design
+<p align="center">
+  <a href="https://ibb.co/P9F9qhx"><img src="https://i.ibb.co/F0m0Rw6/Screenshot-2022-02-07-at-09-44-17.png" alt="Screenshot-2022-02-07-at-09-44-17" border="0"></a><br />
+</p>
