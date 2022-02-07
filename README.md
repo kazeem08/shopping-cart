@@ -13,7 +13,6 @@ Description:
 ## Features and Requirements
 
 - [Node](https://nodejs.org/en/download/current/)
-- Uses [yarn](https://yarnpkg.com/)
 - Mongoose ([Mongoose](http://mongoosejs.com/))
 - Load environment variables from .env
 - [Yarn] (https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
