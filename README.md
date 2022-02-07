@@ -2,6 +2,13 @@
 
 Description:
  - This app shows a simple shopping cart implementation
+
+#### Approach:
+ - A cart is uniquely identifiable so that it can be abandoned and retrieved by its ID
+ - A cart can contain many items/products
+ - An item should contain basic information(price, name, and quantity)
+ - A cart contain information about aggregate information such as total summaries
+(subtotal, discounts, taxes, total)
  
 ## Features and Requirements
 

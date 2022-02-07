@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import StatusCodes from 'http-status-codes';
 import { Request, Response, Router } from 'express';
+import logger from 'jet-logger';
 
-import { errors } from '../shared/constants';
 
 import cartService from '../services/cartService'
 import { CreateCartType } from '../types/cart';
@@ -10,7 +10,7 @@ import { CreateCartType } from '../types/cart';
 
 // Constants
 const router = Router();
-const { BAD_REQUEST, CREATED, OK } = StatusCodes;
+const { BAD_REQUEST, CREATED, OK, NOT_FOUND } = StatusCodes;
 
 
 /**
@@ -18,7 +18,11 @@ const { BAD_REQUEST, CREATED, OK } = StatusCodes;
  */
 router.get('/', async (_: Request, res: Response) => {
     const carts = await cartService.getAll();
-    return res.status(OK).json(carts);
+    return res.status(OK).json({
+        message: 'carts fetched successfully',
+        data: carts,
+        error: false,
+    });
 });
 
 
@@ -27,15 +31,22 @@ router.get('/', async (_: Request, res: Response) => {
  */
 router.get('/:id', async (req: Request, res: Response) => {
     const { id } = req.params;
-    // Check param
-    if (!id) {
-        return res.status(BAD_REQUEST).json({
-            error: errors.paramMissing,
+
+    try {
+        // Fetch data
+        const cart = await cartService.getOne(id);
+        return res.status(OK).json({
+            message: 'cart fetched successfully',
+            data: cart,
+            error: false,
+        });
+    } catch (e) {
+        logger.err(e.message)
+        return res.status(NOT_FOUND).json({
+            error: true,
+            message: e.message,
         });
     }
-    // Fetch data
-    await cartService.getOne(id);
-    return res.status(OK).end();
 });
 
 
@@ -44,18 +55,43 @@ router.get('/:id', async (req: Request, res: Response) => {
  */
 router.post('/', async (req: Request, res: Response) => {
     const data: CreateCartType = req.body;
-  
+
     // Fetch data
-    const cart = await cartService.addToCart(data);
-    return res.status(CREATED).json(cart);
+    try {
+        const cart = await cartService.addToCart(data);
+        return res.status(CREATED).json({
+            message: 'product added to cart successfully',
+            data: [cart],
+            error: false,
+        });
+
+    } catch (e) {
+        logger.err(e.message)
+        return res.status(BAD_REQUEST).json({
+            error: true,
+            message: e.message,
+        });
+    }
 });
 
 router.delete('/:cartId/:productId', async (req: Request, res: Response) => {
     const { cartId, productId } = req.params;
-    
+
     // Fetch data
-    await cartService.removeFromCart({ cartId, productId});
-    return res.status(OK).end();
+    try {
+        await cartService.removeFromCart({ cartId, productId });
+        return res.status(OK).json({
+            message: 'item deleted',
+            error: false
+        });
+    } catch (e){
+        logger.err(e.message)
+        return res.status(BAD_REQUEST).json({
+            error: true,
+            message: e.message,
+        });
+    }
+    
 });
 
 

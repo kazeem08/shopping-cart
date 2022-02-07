@@ -12,6 +12,8 @@ const productSchema = new mongoose.Schema({
     price: {
         type: Number,
     }
+}, {
+	timestamps: true,
 });
 
 export const ProductModel = mongoose.model('product', productSchema);

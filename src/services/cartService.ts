@@ -22,7 +22,14 @@ async function getAll(): Promise<CartType[]> {
  */
 async function addToCart({ cartId, productId }: CreateCartType): Promise<CartType> {
 
-    // get cart
+    // get product
+    const ProductExist = await ProductModel.findOne({_id: productId});
+
+    if(!ProductExist){
+        throw new Error('Product does not exist');
+    }
+
+    // get all product
     const products = await ProductModel.find().select('price');
 
     const productPriceMap = products.reduce((acc: { [ key: string ]: number }, cur) => {
